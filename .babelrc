@@ -1,0 +1,24 @@
+{
+    "env": {
+        "test": {
+            "presets": [
+                ["es2015"],
+                "react"
+            ],
+            "plugins": [
+                "react-require",
+                "add-react-displayname"
+            ]
+        },
+        "production": {
+            "presets": [
+                ["es2015", {"modules": false}],
+                "react"
+            ],
+            "plugins": [
+                "react-require",
+                "add-react-displayname"
+            ]
+        }
+    }
+}
