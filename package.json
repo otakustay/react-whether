@@ -38,6 +38,11 @@
     "type": "git",
     "url": "git+https://github.com/otakustay/react-whether.git"
   },
+  "files": [
+    "index.js",
+    "index.js.map",
+    "src"
+  ],
   "keywords": [
     "react",
     "if",
