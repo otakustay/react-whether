@@ -51,7 +51,7 @@ For more complex condition branches, `context` prop allows `Whether` to manage a
 const isVisitor = user => !user;
 const isAdmin = user => user.role === 'admin';
 
-<Whether matches={currentUser}>
+<Whether context={currentUser}>
     <Match selector={isVisitor}>
         <LoginForm />
     </Match>
@@ -74,7 +74,7 @@ Function can be passed as child of `Whether`, `Match` and `Else` to enable lazy 
 const isVisitor = user => !user;
 const isAdmin = user => user.role === 'admin';
 
-<Whether matches={currentUser}>
+<Whether context={currentUser}>
     <Match selector={isVisitor}>
         {() => <LoginForm />}
     </Match>
