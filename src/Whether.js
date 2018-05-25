@@ -12,8 +12,8 @@ const renderElement = element => (typeof element === 'function' ? element() : el
 
 const Whether = ({context, matches, children}) => {
     const childrenCount = Children.count(children);
-    const firstChild = childrenCount === 1 ? children : children[0];
-    const lastChild = childrenCount === 1 ? children : children[children.length - 1];
+    const firstChild = childrenCount <= 1 ? children : children[0];
+    const lastChild = childrenCount <= 1 ? children : children[children.length - 1];
     const elseChild = lastChild.type === Else ? lastChild : null;
 
     if (typeof matches === 'boolean') {
