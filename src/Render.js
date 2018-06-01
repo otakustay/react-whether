@@ -11,4 +11,6 @@ const Render = ({children}) => {
     return children;
 };
 
+Render.displayName = 'Render';
+
 export default Render;
