@@ -10,7 +10,7 @@ const SwitchMode = ({context, branches}) => {
 
     return (
         <Render>
-            {branch.children}
+            {branch ? branch.children : null}
         </Render>
     );
 };

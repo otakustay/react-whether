@@ -27,14 +27,23 @@ const elementToBranch = ({type, props}) => {
 };
 
 const Whether = ({context, matches, children}) => {
-    const elements = Children.toArray(children);
-
     if (typeof matches !== 'boolean') {
+        const elements = Children.toArray(children);
         const branches = elements.map(elementToBranch);
         return <SwitchMode context={context} branches={branches} />;
     }
 
+    const childrenCount = Children.count(children);
 
+    if (childrenCount <= 1) {
+        return (
+            <IfMode matches={matches}>
+                {children}
+            </IfMode>
+        );
+    }
+
+    const elements = Children.toArray(children);
     const lastElement = elements[elements.length - 1];
 
     if (lastElement.type === Else) {
