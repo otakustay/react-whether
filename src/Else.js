@@ -5,6 +5,7 @@
 
 import PropTypes from 'prop-types';
 
+/* istanbul ignore next line */
 const Else = () => null;
 
 Else.propTypes = {
