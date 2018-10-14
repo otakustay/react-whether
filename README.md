@@ -45,6 +45,49 @@ We can add an `Else` component as the last child of `Whether` to get 2 branches.
 
 ### More branches
 
+#### simple condition branches: perform switch and case logic
+
+```jsx
+let testValue = 4;
+
+...
+render() {
+    return (
+        <Switch value={testValue}>
+            <Case value={1}>
+                negative review
+            </Case>
+            <Case values={[2, 3]}>
+                medium review
+            </Case>
+            <Default>
+                good review
+            </Default>
+        </Switch>
+    );
+}
+```
+
+```jsx
+let testValue = 4;
+
+...
+render() {
+    switch (testValue) {
+        case 1:
+            return 'negative review';
+        case 2:
+        case 3:
+            return 'medium review';
+        default:
+            return 'good review';        
+    }
+}
+
+```
+
+#### complex condition branches
+
 For more complex condition branches, `context` prop allows `Whether` to manage a condition context and perform more branches, you can use `Match` and its `selector` prop to create a branch.
 
 ```jsx
