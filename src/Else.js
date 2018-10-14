@@ -5,7 +5,10 @@
 
 import PropTypes from 'prop-types';
 
+/* istanbul ignore next line */
 const Else = () => null;
+
+Else.displayName = 'Else';
 
 Else.propTypes = {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired

@@ -3,35 +3,64 @@
  * @author zhanglili
  */
 
+/* eslint-disable react/require-default-props */
+
 import {Children} from 'react';
 import PropTypes from 'prop-types';
 import Match from './Match';
 import Else from './Else';
+import IfMode from './IfMode';
+import IfElseMode from './IfElseMode';
+import SwitchMode from './SwitchMode';
 
-const renderElement = element => (typeof element === 'function' ? element() : element);
+const elementToBranch = ({type, props}) => {
+    if (type === Match) {
+        return props;
+    }
+
+    return {
+        selector() {
+            return true;
+        },
+        children: props.children
+    };
+};
 
 const Whether = ({context, matches, children}) => {
+    if (typeof matches !== 'boolean') {
+        const elements = Children.toArray(children);
+        const branches = elements.map(elementToBranch);
+        return <SwitchMode context={context} branches={branches} />;
+    }
+
     const childrenCount = Children.count(children);
-    const firstChild = childrenCount === 1 ? children : children[0];
-    const lastChild = childrenCount === 1 ? children : children[children.length - 1];
-    const elseChild = lastChild.type === Else ? lastChild : null;
 
-    if (typeof matches === 'boolean') {
-        return matches
-            ? renderElement(firstChild)
-            : (elseChild ? renderElement(elseChild.props.children) : null);
+    if (childrenCount <= 1) {
+        return (
+            <IfMode matches={matches}>
+                {children}
+            </IfMode>
+        );
     }
 
-    const matched = children.filter(child => child.type === Match).find(({props}) => props.selector(context));
-    if (matched) {
-        return renderElement(matched.props.children);
+    const elements = Children.toArray(children);
+    const lastElement = elements[elements.length - 1];
+
+    if (lastElement.type === Else) {
+        return (
+            <IfElseMode
+                matches={matches}
+                ifChildren={elements.slice(0, -1)}
+                elseChildren={lastElement.props.children}
+            />
+        );
     }
 
-    if (elseChild) {
-        return renderElement(elseChild.props.children);
-    }
-
-    return null;
+    return (
+        <IfMode matches={matches}>
+            {children}
+        </IfMode>
+    );
 };
 
 Whether.propTypes = {

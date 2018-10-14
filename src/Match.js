@@ -5,7 +5,10 @@
 
 import PropTypes from 'prop-types';
 
+/* istanbul ignore next line */
 const Match = () => null;
+
+Match.displayName = 'Match';
 
 Match.propTypes = {
     selector: PropTypes.func.isRequired,
