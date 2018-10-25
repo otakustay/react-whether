@@ -60,3 +60,6 @@ typings/
 .DS_Store
 /cjs
 /es
+
+# output file
+dist
