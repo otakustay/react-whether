@@ -7,13 +7,13 @@ export interface IBranchPropWithSelector extends IRenderProp {
 }
 
 export interface ISwitchModeProp extends IRenderProp {
-  branches?: Array<IMatchProp | IBranchPropWithSelector>;
+  branches: Array<IMatchProp | IBranchPropWithSelector>;
   context?: any;
 }
 
 const SwitchMode: React.SFC<ISwitchModeProp> = ({
   context,
-  branches = []
+  branches
 }: ISwitchModeProp) => {
   const branch = branches.find(({ selector }) => selector(context));
 

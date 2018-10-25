@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import Else from './Else';
 import IfElseMode from './IfElseMode';
 import Match, { IMatchProp } from './Match';
@@ -57,6 +58,13 @@ const Whether: React.SFC<IWhetherProp> = ({
   }
 
   return <IfMode matches={matches}>{children}</IfMode>;
+};
+
+Whether.propTypes = {
+  context: PropTypes.any,
+  // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/28016
+  matches: PropTypes.bool as PropTypes.Validator<boolean>,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired
 };
 
 export default Whether;
