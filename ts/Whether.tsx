@@ -2,11 +2,11 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import Else from './Else';
 import IfElseMode from './IfElseMode';
-import Match, { IMatchProp } from './Match';
-import IfMode, { IIfModeProp } from './IfMode';
-import SwitchMode, { IBranchPropWithSelector } from './SwitchMode';
+import Match, {MatchProp} from './Match';
+import IfMode, {IfModeProp} from './IfMode';
+import SwitchMode, {BranchPropWithSelector} from './SwitchMode';
 
-const elementToBranch = ({ type, props }: React.ReactElement<any>): IMatchProp | IBranchPropWithSelector => {
+const elementToBranch = ({type, props}: React.ReactElement<any>): MatchProp | BranchPropWithSelector => {
     if (type === Match) {
         return props;
     }
@@ -15,18 +15,18 @@ const elementToBranch = ({ type, props }: React.ReactElement<any>): IMatchProp |
         selector() {
             return true;
         },
-        children: props.children
+        children: props.children,
     };
 };
 
-export interface IWhetherProp extends IIfModeProp {
+export interface WhetherProp extends IfModeProp {
     context?: any;
 }
 
-const Whether: React.SFC<IWhetherProp> = ({ context, matches, children }) => {
-    const { Children } = React;
+const Whether: React.SFC<WhetherProp> = ({context, matches, children}) => {
+    const {Children} = React;
     if (typeof matches !== 'boolean') {
-        const elements = Children.toArray(children) as React.ReactElement<any>[];
+        const elements = Children.toArray(children) as Array<React.ReactElement<any>>;
         const branches = elements.map(elementToBranch);
         return <SwitchMode context={context} branches={branches} />;
     }
@@ -57,7 +57,7 @@ Whether.propTypes = {
     context: PropTypes.any,
     // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/28016
     matches: PropTypes.bool as PropTypes.Validator<boolean>,
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
 };
 
 export default Whether;

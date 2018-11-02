@@ -1,0 +1,54 @@
+{
+    "extends": ["tslint:latest", "tslint-config-airbnb"],
+    "rules": {
+        "prefer-template": false,
+        "ter-arrow-parens": false,
+        "align": [true, "parameters", "statements", "members"],
+        "brace-style": [true, "stroustrup"],
+        "function-name": [
+            true,
+            {
+                "method-regex": "^[a-z][\\w\\d]+|\\[[A-Z_]+\\]$",
+                "static-method-regex": "^[a-z][\\w\\d]+$"
+            }
+        ],
+        "import-name": [false],
+        "interface-name": [true, "never-prefix"],
+        "max-line-length": [true, 120],
+        "member-ordering": [false],
+        "member-access": [true, "no-public"],
+        "no-boolean-literal-compare": [false],
+        "no-implicit-dependencies": [false],
+        "no-shadowed-variable": [false],
+        "no-submodule-imports": [false],
+        "no-unused-expression": [true, "allow-fast-null-checks"],
+        "object-curly-spacing": [true, "never"],
+        "object-literal-sort-keys": [false],
+        "one-line": [false],
+        "ordered-imports": [false],
+        "prefer-array-literal": [false],
+        "strict-boolean-expressions": [false],
+        "ter-indent": [
+            true,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "trailing-comma": [
+            true,
+            {
+                "multiline": {
+                    "objects": "always",
+                    "arrays": "always",
+                    "functions": "always",
+                    "imports": "always",
+                    "exports": "always",
+                    "typeLiterals": "always"
+                },
+                "esSpecCompliant": true
+            }
+        ],
+        "variable-name": [true, "allow-pascal-case"]
+    }
+}

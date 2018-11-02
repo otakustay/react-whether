@@ -1,16 +1,14 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types'
-import { IRenderProp } from './Render';
-
-export interface IElseProp extends IRenderProp {}
+import * as PropTypes from 'prop-types';
+import {RenderProp} from './Render';
 
 /* istanbul ignore next line */
-const Else: React.SFC<IElseProp> = () => null;
+const Else: React.SFC<RenderProp> = () => null;
 
 Else.displayName = 'Else';
 
 Else.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
 };
 
 export default Else;

@@ -1,17 +1,13 @@
 import * as React from 'react';
-import Render, { RenderChildren } from './Render';
-import { IIfModeProp } from './IfMode';
+import Render, {RenderChildren} from './Render';
+import {IfModeProp} from './IfMode';
 
-interface IIfElseModeProp extends IIfModeProp {
+interface IfElseModeProp extends IfModeProp {
     ifChildren: RenderChildren;
     elseChildren: RenderChildren;
 }
 
-const IfElseMode: React.SFC<IIfElseModeProp> = ({
-    matches,
-    ifChildren,
-    elseChildren
-}): React.ReactElement<any> => (
+const IfElseMode: React.SFC<IfElseModeProp> = ({matches, ifChildren, elseChildren}): React.ReactElement<any> => (
     <Render>{matches ? ifChildren : elseChildren}</Render>
 );
 

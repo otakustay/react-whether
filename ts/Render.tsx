@@ -7,11 +7,11 @@ export const isRenderFunc = (children: any): children is RenderFunction => {
     return typeof children === 'function';
 };
 
-export interface IRenderProp {
+export interface RenderProp {
     children?: RenderChildren;
 }
 
-const Render: React.SFC<IRenderProp> = ({ children }): React.ReactElement<any> => {
+const Render: React.SFC<RenderProp> = ({children}): React.ReactElement<any> => {
     return <>{isRenderFunc(children) ? children() : children}</>;
 };
 

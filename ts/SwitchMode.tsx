@@ -1,18 +1,18 @@
 import * as React from 'react';
-import Render, { IRenderProp } from './Render';
-import { IMatchProp } from './Match';
+import Render, {RenderProp} from './Render';
+import {MatchProp} from './Match';
 
-export interface IBranchPropWithSelector extends IRenderProp {
+export interface BranchPropWithSelector extends RenderProp {
     selector: (...args: any[]) => true;
 }
 
-export interface ISwitchModeProp extends IRenderProp {
-    branches: Array<IMatchProp | IBranchPropWithSelector>;
+export interface SwitchModeProp extends RenderProp {
+    branches: Array<MatchProp | BranchPropWithSelector>;
     context?: any;
 }
 
-const SwitchMode: React.SFC<ISwitchModeProp> = ({ context, branches }) => {
-    const branch = branches.find(({ selector }) => selector(context));
+const SwitchMode: React.SFC<SwitchModeProp> = ({context, branches}) => {
+    const branch = branches.find(({selector}) => selector(context));
 
     return <Render>{branch ? branch.children : null}</Render>;
 };
