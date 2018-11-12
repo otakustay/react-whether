@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import Render, {RenderProp} from './Render';
 
 export interface IfModeProp extends RenderProp {
-    matches: boolean;
+    matches?: boolean;
 }
 
 const IfMode: React.SFC<IfModeProp> = ({matches, children}): React.ReactElement<any> => (

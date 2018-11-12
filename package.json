@@ -4,6 +4,7 @@
   "description": "A react component to perform if/else logic",
   "main": "cjs/index.js",
   "module": "es/index.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "devDependencies": {
     "coveralls": "^3.0.1",
