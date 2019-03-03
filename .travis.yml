@@ -1,6 +1,6 @@
 language: node_js
 node_js:
   - "node"
-script: npm run ci
+script: yarn run ci
 after_script:
-  - npm run report-cov
+  - yarn run report-cov

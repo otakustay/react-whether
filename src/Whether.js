@@ -22,7 +22,7 @@ const elementToBranch = ({type, props}) => {
         selector() {
             return true;
         },
-        children: props.children
+        children: props.children,
     };
 };
 
@@ -66,7 +66,7 @@ const Whether = ({context, matches, children}) => {
 Whether.propTypes = {
     context: PropTypes.any,
     matches: PropTypes.bool,
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
 };
 
 export default Whether;

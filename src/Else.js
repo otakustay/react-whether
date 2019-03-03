@@ -11,7 +11,7 @@ const Else = () => null;
 Else.displayName = 'Else';
 
 Else.propTypes = {
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
 };
 
 export default Else;

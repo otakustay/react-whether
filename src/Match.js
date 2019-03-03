@@ -12,7 +12,7 @@ Match.displayName = 'Match';
 
 Match.propTypes = {
     selector: PropTypes.func.isRequired,
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
 };
 
 export default Match;

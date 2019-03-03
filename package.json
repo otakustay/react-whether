@@ -5,56 +5,30 @@
   "main": "cjs/index.js",
   "module": "es/index.js",
   "sideEffects": false,
-  "dependencies": {
-    "prop-types": "^15.5.10"
-  },
   "devDependencies": {
-    "@ecomfe/eslint-config": "^1.0.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.3",
-    "babel-jest": "^23.0.1",
-    "babel-plugin-add-react-displayname": "0.0.5",
-    "babel-plugin-react-require": "^3.0.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "babel-register": "^6.26.0",
     "coveralls": "^3.0.1",
-    "eslint": "^4.19.1",
-    "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-react": "^7.8.2",
-    "jest": "^23.1.0",
+    "prop-types": "^15.5.10",
     "react": "^16.4.0",
-    "react-test-renderer": "^16.4.0",
-    "rollup": "^0.59.4",
-    "rollup-plugin-auto-external": "^1.2.0",
-    "rollup-plugin-babel": "^3.0.4",
-    "rollup-plugin-commonjs": "^9.1.3",
-    "rollup-plugin-eslint": "^4.0.0",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-terser": "^1.0.1"
+    "reskript": "^0.8.0"
   },
   "peerDependencies": {
     "react": ">=15"
   },
   "scripts": {
     "test": "NODE_ENV=test jest --coverage",
-    "build": "NODE_ENV=production node rollup.js",
+    "build": "skr rollup --clean",
     "report-cov": "cat coverage/lcov.info | coveralls",
-    "lint": "eslint src",
-    "ci": "npm run test && npm run build",
-    "prepublishOnly": "npm run ci"
+    "lint": "skr lint",
+    "ci": "yarn test && yarn run build",
+    "prepublishOnly": "yarn run ci"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/otakustay/react-whether.git"
   },
   "files": [
-    "index.js",
-    "index.js.map",
-    "src"
+    "es",
+    "cjs"
   ],
   "keywords": [
     "react",
@@ -66,15 +40,5 @@
   "bugs": {
     "url": "https://github.com/otakustay/react-whether/issues"
   },
-  "homepage": "https://github.com/otakustay/react-whether#readme",
-  "nyc": {
-    "include": [
-      "src/Whether.js"
-    ],
-    "require": [
-      "babel-register"
-    ],
-    "sourceMap": false,
-    "instrument": false
-  }
+  "homepage": "https://github.com/otakustay/react-whether#readme"
 }
