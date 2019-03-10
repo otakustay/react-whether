@@ -7,6 +7,8 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "devDependencies": {
+    "@types/prop-types": "^15.7.0",
+    "@types/react": "^16.8.7",
     "coveralls": "^3.0.1",
     "prop-types": "^15.5.10",
     "react": "^16.4.0",
@@ -16,7 +18,7 @@
     "react": ">=15"
   },
   "scripts": {
-    "test": "NODE_ENV=test jest --coverage",
+    "test": "yarn run build && skr test",
     "build": "skr rollup --clean",
     "report-cov": "cat coverage/lcov.info | coveralls",
     "lint": "skr lint",

@@ -969,10 +969,23 @@
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-11.10.4.tgz#3f5fc4f0f322805f009e00ab35a2ff3d6b778e42"
   integrity sha1-P1/E8PMigF8AngCrNaL/PWt3jkI=
 
+"@types/prop-types@*", "@types/prop-types@^15.7.0":
+  version "15.7.0"
+  resolved "http://registry.npm.taobao.org/@types/prop-types/download/@types/prop-types-15.7.0.tgz#4c48fed958d6dcf9487195a0ef6456d5f6e0163a"
+  integrity sha1-TEj+2VjW3PlIcZWg72RW1fbgFjo=
+
 "@types/q@^1.5.1":
   version "1.5.1"
   resolved "http://registry.npm.taobao.org/@types/q/download/@types/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
   integrity sha1-SP2YwVYf5xi2FzPa7Ub/EVtJbhg=
+
+"@types/react@^16.8.7":
+  version "16.8.7"
+  resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.8.7.tgz#7b1c0223dd5494f9b4501ad2a69aa6acb350a29b"
+  integrity sha1-exwCI91UlPm0UBrSppqmrLNQops=
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
 
 "@types/unist@*", "@types/unist@^2.0.0":
   version "2.0.3"
@@ -2932,6 +2945,11 @@ cssstyle@^1.0.0:
   integrity sha1-Os6ydZ6vUUrBohYo1yPWBDqBlJU=
   dependencies:
     cssom "0.3.x"
+
+csstype@^2.2.0:
+  version "2.6.3"
+  resolved "http://registry.npm.taobao.org/csstype/download/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
+  integrity sha1-twHlloJFv5sI1UrIPQC2JOYiqfo=
 
 csv-generate@^2.2.2:
   version "2.2.2"
