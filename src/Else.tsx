@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {RenderProp} from './Render';
 
 /* istanbul ignore next line */

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Render, {RenderProp} from './Render';
 
 export interface IfModeProp extends RenderProp {

@@ -1,8 +1,8 @@
 import {Whether, Match, Else} from '../es';
-import renderer from 'react-test-renderer';
+import {create} from 'react-test-renderer';
 
 test('one branch matched', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={true}>
             <div />
         </Whether>
@@ -12,7 +12,7 @@ test('one branch matched', () => {
 });
 
 test('one branch with multiple children', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={true}>
             <ul />
             <ol />
@@ -23,7 +23,7 @@ test('one branch with multiple children', () => {
 });
 
 test('one branch not matched', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={false}>
             <div />
         </Whether>
@@ -33,7 +33,7 @@ test('one branch not matched', () => {
 });
 
 test('one branch matched with function children', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={true}>
             {() => <div />}
         </Whether>
@@ -43,7 +43,7 @@ test('one branch matched with function children', () => {
 });
 
 test('if and else when matched', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={true}>
             <div />
             <Else>
@@ -56,7 +56,7 @@ test('if and else when matched', () => {
 });
 
 test('if and else with multiple children matched', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={true}>
             <ul />
             <ol />
@@ -70,7 +70,7 @@ test('if and else with multiple children matched', () => {
 });
 
 test('if and else when not matched', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={false}>
             <div />
             <Else>
@@ -83,7 +83,7 @@ test('if and else when not matched', () => {
 });
 
 test('else with multiple children', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={true}>
             <div />
             <Else>
@@ -97,7 +97,7 @@ test('else with multiple children', () => {
 });
 
 test('if and else when not matched with function children', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether matches={false}>
             <div />
             <Else>
@@ -110,7 +110,7 @@ test('if and else when not matched with function children', () => {
 });
 
 test('multiple match', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether context={3}>
             <Match selector={i => i < 1}>
                 <span />
@@ -125,7 +125,7 @@ test('multiple match', () => {
 });
 
 test('match with multiple children', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether context={3}>
             <Match selector={i => i < 1}>
                 <span />
@@ -141,7 +141,7 @@ test('match with multiple children', () => {
 });
 
 test('multiple match when none matched', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether context={3}>
             <Match selector={i => i < 1}>
                 <div />
@@ -156,7 +156,7 @@ test('multiple match when none matched', () => {
 });
 
 test('multiple match with else matched', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether context={3}>
             <Match selector={i => i < 1}>
                 <div />
@@ -171,7 +171,7 @@ test('multiple match with else matched', () => {
 });
 
 test('match with function children', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether context={3}>
             <Match selector={i => i > 1}>
                 {() => <div />}
@@ -186,7 +186,7 @@ test('match with function children', () => {
 });
 
 test('else with function children', () => {
-    const component = renderer.create(
+    const component = create(
         <Whether context={3}>
             <Match selector={i => i < 1}>
                 {() => <div />}

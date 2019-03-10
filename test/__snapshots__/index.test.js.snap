@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`else with function children 1`] = `<span />`;
+
+exports[`else with multiple children 1`] = `<div />`;
+
+exports[`if and else when matched 1`] = `<div />`;
+
+exports[`if and else when not matched 1`] = `<span />`;
+
+exports[`if and else when not matched with function children 1`] = `<span />`;
+
+exports[`if and else with multiple children matched 1`] = `
+Array [
+  <ul />,
+  <ol />,
+]
+`;
+
+exports[`match with function children 1`] = `<div />`;
+
+exports[`match with multiple children 1`] = `
+Array [
+  <ul />,
+  <ol />,
+]
+`;
+
+exports[`multiple match 1`] = `<div />`;
+
+exports[`multiple match when none matched 1`] = `null`;
+
+exports[`multiple match with else matched 1`] = `<span />`;
+
+exports[`one branch matched 1`] = `<div />`;
+
+exports[`one branch matched with function children 1`] = `<div />`;
+
+exports[`one branch not matched 1`] = `null`;
+
+exports[`one branch with multiple children 1`] = `
+Array [
+  <ul />,
+  <ol />,
+]
+`;

@@ -12,13 +12,13 @@
     "coveralls": "^3.0.1",
     "prop-types": "^15.5.10",
     "react": "^16.4.0",
-    "reskript": "^0.8.0"
+    "reskript": "^0.10.1"
   },
   "peerDependencies": {
     "react": ">=15"
   },
   "scripts": {
-    "test": "yarn run build && skr test",
+    "test": "yarn run build && skr test --target=react --coverage",
     "build": "skr rollup --clean",
     "report-cov": "cat coverage/lcov.info | coveralls",
     "lint": "skr lint",
@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/otakustay/react-whether/issues"
   },
-  "homepage": "https://github.com/otakustay/react-whether#readme"
+  "homepage": "https://github.com/otakustay/react-whether#readme",
+  "dependencies": {
+    "react-test-renderer": "^16.8.4"
+  }
 }
