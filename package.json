@@ -12,6 +12,7 @@
     "coveralls": "^3.0.1",
     "prop-types": "^15.5.10",
     "react": "^16.4.0",
+    "react-test-renderer": "^16.8.4",
     "reskript": "^0.10.1"
   },
   "peerDependencies": {
@@ -43,8 +44,5 @@
   "bugs": {
     "url": "https://github.com/otakustay/react-whether/issues"
   },
-  "homepage": "https://github.com/otakustay/react-whether#readme",
-  "dependencies": {
-    "react-test-renderer": "^16.8.4"
-  }
+  "homepage": "https://github.com/otakustay/react-whether#readme"
 }
