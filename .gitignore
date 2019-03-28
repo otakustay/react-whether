@@ -60,3 +60,8 @@ typings/
 .DS_Store
 /cjs
 /es
+/typings
+# output file
+dist
+
+.rpt2_cache

@@ -1,12 +1,9 @@
-/**
- * @file 空组件，用于给`Wether`使用
- * @author zhanglili
- */
-
+import * as React from 'react';
 import PropTypes from 'prop-types';
+import {RenderProp} from './Render';
 
 /* istanbul ignore next line */
-const Else = () => null;
+const Else: React.SFC<RenderProp> = () => null;
 
 Else.displayName = 'Else';
 
