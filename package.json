@@ -4,7 +4,7 @@
   "description": "A react component to perform if/else logic",
   "main": "cjs/index.js",
   "module": "es/index.js",
-  "types": "dist/index.d.ts",
+  "types": "es/index.d.ts",
   "sideEffects": false,
   "devDependencies": {
     "@types/prop-types": "^15.7.0",
@@ -13,7 +13,7 @@
     "prop-types": "^15.5.10",
     "react": "^16.4.0",
     "react-test-renderer": "^16.8.4",
-    "reskript": "^0.10.1"
+    "reskript": "^0.21.0"
   },
   "peerDependencies": {
     "react": ">=15"
